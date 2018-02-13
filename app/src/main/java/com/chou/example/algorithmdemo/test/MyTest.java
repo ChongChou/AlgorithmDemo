@@ -1,6 +1,7 @@
 package com.chou.example.algorithmdemo.test;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 
 /**
  * Created by zhouchong on 2018/2/12.
@@ -118,5 +119,98 @@ public class MyTest {
             sb.insert(0, String.valueOf(i % 2));
         }
         return sb.toString();
+    }
+
+    public static void test_1_1_11(boolean[][] a) {
+        int maxLength = 0;
+        for (int i = 0; i < a.length; i++) {
+            maxLength = a[i].length > maxLength ? a[i].length : maxLength;
+            System.out.print(i + "\t");
+            for (int j = 0; j < a[i].length; j++) {
+                System.out.print((a[i][j] ? "+" : "-") + "\t");
+            }
+            System.out.println("\n");
+        }
+        for (int i = 0; i < maxLength; i++) {
+            System.out.print("\t" + i);
+        }
+    }
+
+    public static void test_1_1_12() {
+        //
+        int[] a = new int[10];
+        for (int i = 0; i < 10; i++)
+            a[i] = 9 - i;
+        // {9, 8, 7, 6, ... , 2, 1, 0}
+        for (int i = 0; i < 10; i++)
+            a[i] = a[a[i]];
+        // {0, 1, 2, ... , 6, 7, 8, 9}
+        for (int i = 0; i < 10; i++)
+            System.out.println(i);
+    }
+
+    /**
+     * 打印一个M行N列二维数组的转置(行列交换)
+     * @param a 二维数组
+     * @param M 行数
+     * @param N 列数
+     */
+    public static void test_1_1_13(String[][] a, int M, int N) {
+        System.out.print("N\\M\t");
+        for (int i = 0; i < M; i++) {
+            System.out.print(i + "\t");
+        }
+        System.out.println();
+        for (int i = 0; i < N; i++) {
+            System.out.print(i+"\t");
+            for (int j = 0; j < M; j++) {
+                System.out.print(a[j][i] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int test_1_1_14(int N) {
+        int k = 0;
+        for (int i = 1; i <= N; i *= 2) {
+            k++;
+        }
+        return k - 1;
+    }
+
+    public static int[] test_1_1_15(int[] a, int M) {
+        int[] b = new int[M];
+        HashMap<Integer, Integer> map = getCountMap(a);
+        for (int i = 0; i < M; i++) {
+            Integer count = map.get(i);
+            b[i] = count == null ? 0 : count;
+        }
+        return b;
+    }
+
+    private static HashMap<Integer, Integer> getCountMap(int[] param) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i : param) {
+            Integer count = map.get(i);
+            if (count == null) {
+                map.put(i, 1);
+            } else {
+                map.put(i, count+1);
+            }
+        }
+        return map;
+    }
+
+    public static int sumArray(int[] a) {
+        int sum = 0;
+        for (int i : a) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public static String test_1_1_16(int n) {
+        if (n <= 0) return "";
+        return test_1_1_16(n - 3) + n + test_1_1_16(n - 2) + n;
     }
 }

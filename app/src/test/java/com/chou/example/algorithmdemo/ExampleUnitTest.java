@@ -4,6 +4,9 @@ import com.chou.example.algorithmdemo.test.MyTest;
 
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 /**
@@ -27,6 +30,24 @@ public class ExampleUnitTest {
 //        System.out.println(sum);
 //        MyTest.test_1_1_8();
 //        System.out.println(MyTest.test_1_1_9(25));
-        System.out.println(MyTest.test_1_1_1_b());
+//        System.out.println(MyTest.test_1_1_1_b());
+//        boolean[][] a = {{true, false, true, true}, {true, false, true}, {false, true}, {true, false, false, true, true}};
+//        MyTest.test_1_1_12();
+//        String[][] a = {
+//                {"00", "01", "02", "03"},
+//                {"10", "11", "12", "13"},
+//                {"20", "21", "22", "23"},
+//                {"30", "31", "32", "33"},
+//                {"40", "41", "42", "43"}
+//        };
+//        MyTest.test_1_1_13(a, 5, 4);
+//        System.out.println(MyTest.test_1_1_14(8));
+//        int[] a = {1, 4, 7, 9, 3, 4, 2, 5, 1, 6};
+//        int m = 10;
+//        int[] b = MyTest.test_1_1_15(a, m);
+//        System.out.println("b = " + Arrays.toString(b));
+//        System.out.println("b.sum = " + MyTest.sumArray(b));
+//        System.out.println("a.length = " + a.length);
+        System.out.println(MyTest.test_1_1_16(6));
     }
 }
